@@ -4,10 +4,10 @@ import sys
 
 def parse_url(url):
     """
-    Parse shopee.vn url to get itemid and shopid
+    Parse shopee.co.id url to get itemid and shopid
 
     for example:
-    url = https://shopee.vn/Apple-MacBook-Air-(2020)-M1-Chip-13.3-inch-8GB-256GB-SSD-i.88201679.5873954476
+    url = https://shopee.co.id/Apple-MacBook-Air-(2020)-M1-Chip-13.3-inch-8GB-256GB-SSD-i.88201679.5873954476
     itemid = 5873954476
     shopid = 88201679
 
@@ -20,7 +20,7 @@ def parse_url(url):
     itemid = ""
     shopid = ""
     
-    if re.match(r'^https://shopee.vn/.*[0-9]+\.[0-9]+$', url):
+    if re.match(r'^https://shopee.co.id/.*[0-9]+\.[0-9]+$', url):
         flag = "shopee"
         url_split = url.split('.')
         itemid = url_split[-1]
