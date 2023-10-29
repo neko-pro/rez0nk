@@ -14,15 +14,15 @@ from utils import read_config, is_same_row, ensure_dir, parse_url, update_master
 
 def fetch_data(itemid, shopid, hyperlink, flag='shopee'):
     """
-    Fetch data from shopee.vn api and return json data
-    API: https://shopee.vn/api/v4/item/get?itemid={itemid}&shopid={shopid}
+    Fetch data from shopee.co.id api and return json data
+    API: https://shopee.co.id/api/v4/item/get?itemid={itemid}&shopid={shopid}
     Raise exception if response status code is not 200
     """
     headers = {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
     }
     if flag == 'shopee':
-        url = f'https://shopee.vn/api/v4/item/get?itemid={itemid}&shopid={shopid}'
+        url = f'https://shopee.co.id/api/v4/item/get?itemid={itemid}&shopid={shopid}'
     elif flag == 'tiki':
         url = f'https://tiki.vn/api/v2/products/{shopid}?platform=web&spid={itemid}'
     else:
@@ -201,7 +201,7 @@ def main():
     urls = config.get('urls', [])
     print(f'Got {len(urls)} from config file')
 
-    # Fetch data from shopee.vn api and update db
+    # Fetch data from shopee.co.id api and update db
     for url in urls:
         try:
             print(f'Processing: {url}')
