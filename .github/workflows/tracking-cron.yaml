@@ -8,6 +8,7 @@ on:
     push:
         branches:
             - main
+    workflow_dispatch:
     schedule:
         #        You can use https://crontab.guru to help generate
         #        your cron syntax and confirm what time it will run
